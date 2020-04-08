@@ -10,7 +10,7 @@ Then exec `echo $DISPLAY`. The result will be **:1** or **:0**
 
 Run the container with the following command:
 
-`sudo docker run -i -t --name modelsim --net=host -e DISPLAY -v /tmp/.X11-unix goldensniper/modelsim-docker bash`
+`sudo docker run -i -t --name modelsim --net=host -e DISPLAY -v /tmp/.X11-unix -e USER=$USER -e USERID=$UID -v $(pwd):/home/<USER_PATH> goldensniper/modelsim-docker`
 
 Now inside the container exec the following command:
 
